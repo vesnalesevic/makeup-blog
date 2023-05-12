@@ -1,0 +1,52 @@
+<!-- <% if current_user %>
+  <%= button_to "Sign out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }%>
+<% end %> -->
+
+<!-- <div id="posts">
+  <% @posts.each do |post| %>
+    <%= render post %>
+    <p>
+      <%= link_to "Show this post", post %>
+    </p>
+  <% end %>
+</div> -->
+
+<div class="container flex-column gap-3 justify-content-between flex-lg-row d-flex my-5">
+  <div class="col-12 col-lg-5 col-xl-5">
+    <div> 
+      <h3><strong><%= @posts[0].title %></strong></h3>
+    </div>
+    <div class="my-4">
+      <%= @posts[0].body.truncate(250, omission: '...') %>
+    </div>
+    <button type="button" class="btn"><%= link_to "Pročitaj više", @posts.first, class: 'text-black btn-text' %></button> 
+  </div> 
+  <div class="col-12 col-lg-6 col-xl-5">
+    <%= image_tag @posts[0].image, class: 'photo', width: '100%'%>
+  </div> 
+</div>
+
+<div class="purple py-4">
+  <div class="container">
+    <div class="post-slide">
+      <% @posts.each do |post| %>
+      <article class="card text-left p-0">  
+        <%= image_tag post.image, class: 'photo', height: '100%', width: '100%', position: 'absolute' %>
+        <div class="post-date p-2 btn">
+          <%= post.created_at.strftime("%d/%m/%Y") %>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title mb-2"><%= post.title %></h5>
+          <p class="card-text my-4"><%= post.body.truncate(180, omission: '...') %></p>
+          <button type="button" class="btn my-2"><%= link_to "Pročitaj više", post, class: 'text-black btn-text' %></button>
+        </div>
+      </article>
+      <% end %>
+    </div>
+      <%== pagy_nav(@pagy) %>
+  </div>
+</div>
+
+
+
+<!-- <%= link_to "New post", new_post_path %> -->

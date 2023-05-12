@@ -1,0 +1,158 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-black-light: #333436;
+    --color-btn: #9A8087;
+    --color-btn-hover: #f5d0da;
+    --color-primary: #D4C6CE;
+
+
+
+    --container-width-xl: 1600px;
+    /* min 1600px */
+    --container-width-lg: 1400px;
+    /* min 1400px */
+    --container-width-md: 1140px;
+    /* min 1200px */
+    --container-width-sm: 950px;
+    /* min 992px */
+    --container-width-xs: 720px;
+    /* min 768px */
+    --container-width-xxs: 540px;
+    /* min 576px */
+}
+
+.footer-bottom {
+    background: var(--color-btn);
+}
+
+
+footer a {
+    color: var(--color-btn);
+    font-size: 3.5rem;
+    text-decoration: none;
+}
+footer a :hover {
+    color: var(--color-btn-hover);
+}
+.footer-logo img{
+    max-width: 500px;
+}
+
+@media screen and (max-width: 992px){
+   footer a{
+    font-size: 3rem;
+   }  
+}
+
+@media screen and (max-width: 498px){
+    footer a{
+     font-size: 2.2rem;
+    }  
+    .footer-logo img{
+        width: 250px;
+    }
+ }
+
+/* ------------------
+COLORS AND SCREEN STYLES
+-----------*/
+
+.nav-color{
+    background: linear-gradient(90deg, #E0E0E0 0%, #D4C6CE 100%);
+}
+
+.purple {
+    background: #D4C6CE;
+}
+
+.btn{
+    background: var(--color-btn);
+}
+
+.btn:hover{
+    background-color: var(--color-btn-hover);
+}
+
+
+.btn-text{
+    text-decoration: none;
+}
+
+.navbar-nav{
+    gap: 15px;
+}
+
+/* *********** POST PAGE *************** */
+
+.post-slide{
+    background: transparent;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    gap: 24px;
+}
+
+.photo {
+    max-height: 300px;
+}
+
+.pagy-nav{
+    justify-content: center;
+}
+
+.card{
+    background: transparent;
+    display:flex;
+    height: 100%;
+    background: white;
+    border-radius: 0;
+    width: 100%;
+}
+
+.photo{
+    max-height: 250px;
+}
+
+.card-text{
+    max-height: 100px;
+    overflow-y: hidden;
+}
+.post-date{
+    position: absolute;
+    width: fit-content;
+    top: 0;
+    right: 0;
+    background-color: var(--color-btn);
+    opacity: 0.5;
+}
+
+.last-post{
+    display: flex;
+    flex: 40% ;
+    justify-content: space-between;
+}
+
+
+@media screen and (max-width: 992px){
+    .post-slide{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    
+}
+
+@media screen and (max-width: 768px){
+    .post-slide{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
